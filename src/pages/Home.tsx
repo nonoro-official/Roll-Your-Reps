@@ -51,17 +51,17 @@ const Home: React.FC<HomePageProps> = ({setCurrentSection}) => {
 
                         <div className="flex flex-wrap justify-center items-end gap-6 sm:gap-10 my-12">
                             <img
-                                src="../../public/happy-kitty.png"
+                                src="src/assets/happy-kitty.png"
                                 alt="kitty"
                                 className="w-32 h-32 stagger-1"
                             />
                             <img
-                                src="../../public/static-bunny.png"
+                                src="src/assets/static-bunny.png"
                                 alt="bunny"
                                 className="w-32 h-32 stagger-2"
                             />
                             <img
-                                src="../../public/static-bear.png"
+                                src="src/assets/static-bear.png"
                                 alt="bear"
                                 className="w-32 h-32 stagger-3"
                             />

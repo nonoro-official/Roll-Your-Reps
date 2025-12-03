@@ -2,12 +2,12 @@ import * as React from "react";
 import PageContainer from "../components/PageContainer.tsx";
 import type { MascotType } from "../types";
 import MascotCard from "../components/MascotCard.tsx";
-import happyKitty from '../../public/happy-kitty.png';
-import kitty from '../../public/kitty.png';
-import staticBunny from '../../public/static-bunny.png';
-import bunny from '../../public/bunny.png';
-import staticBear from '../../public/static-bear.png';
-import bear from '../../public/bear.png';
+import happyKitty from '../assets/happy-kitty.png';
+import kitty from '../assets/kitty.png';
+import staticBunny from '../assets/static-bunny.png';
+import bunny from '../assets/bunny.png';
+import staticBear from '../assets/static-bear.png';
+import bear from '../assets/bear.png';
 
 interface ExercisePageProps {
     selectedMascot: MascotType | null;
