@@ -126,7 +126,7 @@ const Home: React.FC<HomePageProps> = ({setCurrentSection}) => {
                                     <strong>Choose a Mascot:</strong> Each mascot is linked to a specific exercise or activity.
                                 </li>
                                 <li>
-                                    <strong>Click the Mascot:</strong> The mascot generates a random number of reps.
+                                    <strong>Click the Mascot:</strong> The mascot generates a random number of reps everytime you click on it.
                                 </li>
                                 <li>
                                     <strong>Change Equipment Setting:</strong> Toggle the button if you have or don't have equipment.
