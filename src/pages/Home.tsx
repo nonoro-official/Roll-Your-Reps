@@ -4,8 +4,6 @@ import PageContainer from "../components/PageContainer.tsx";
 import logo from "../assets/logo.png";
 
 interface HomePageProps {
-    userName: string;
-    setUserName: (name: string) => void;
     setCurrentSection: (section: SectionType) => void;
 }
 
@@ -25,16 +23,20 @@ const Home: React.FC<HomePageProps> = ({setCurrentSection}) => (
                 <img
                     src="src/assets/happy-kitty.png"
                     alt="kitty"
-                    className="w-32 h-32 animate-bounce"/>
+                    className="w-32 h-32 stagger-1"
+                />
                 <img
                     src="src/assets/static-bunny.png"
                     alt="bunny"
-                    className="w-32 h-32 animate-bounce"/>
+                    className="w-32 h-32 stagger-2"
+                />
                 <img
                     src="src/assets/static-bear.png"
                     alt="bear"
-                    className="w-32 h-32 animate-bounce"/>
+                    className="w-32 h-32 stagger-3"
+                />
             </div>
+
 
             <div className="bg-blue-50 rounded-lg p-8 mb-8 max-w-2xl mx-auto">
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800">Welcome!</h2>

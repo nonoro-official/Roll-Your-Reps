@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentSection, setCurrentSection }) 
                 >
                     {/* Active dot indicator on top */}
                     {active && (
-                        <div className="absolute -top-1 w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                        <div className="absolute -top-1 w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></div>
                     )}
 
                     <div
@@ -46,7 +46,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentSection, setCurrentSection }) 
                     <div
                         className={`
                 text-xs font-medium text-center transition-all duration-300
-                ${active ? "text-blue-600" : "text-gray-500 group-hover:text-gray-900"}
+                ${active ? "text-indigo-500" : "text-gray-500 group-hover:text-gray-900"}
               `}
                     >
                         {item.label}
