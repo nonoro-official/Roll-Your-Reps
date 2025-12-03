@@ -5,52 +5,55 @@ import barbell from "../assets/barbell.png"
 import idea from "../assets/idea.png"
 import resource from "../assets/resource.png"
 
+const items = [
+    { id: "home", label: "Home", icon: logo },
+    { id: "exercise", label: "Exercise!", icon: barbell },
+    { id: "facts", label: "Fun Facts", icon: idea },
+    { id: "resources", label: "Resources", icon: resource },
+]
+
 interface SidebarProps {
     currentSection: SectionType;
     setCurrentSection: (section: SectionType) => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ currentSection, setCurrentSection }) => (
-    <div className="w-32 bg-white shadow-lg flex flex-col gap-4 p-4">
-        <div
-            className={`flex flex-col items-center gap-2 p-4 rounded-lg cursor-pointer transition-all ${currentSection === 'home' ? 'bg-blue-100' : 'hover:bg-gray-100'}`}
-            onClick={() => setCurrentSection('home')}
-        >
-            <div className="w-14 h-14 flex items-center justify-center text-2xl">
-                <img src={logo} alt="Logo" className="w-32" />
-            </div>
-            <div className="text-xs font-medium text-center">Home</div>
-        </div>
+    <div className="hidden md:flex flex-col gap-6 p-4
+      bg-white/70 backdrop-blur-xl border border-white/30 rounded-2xl shadow-xl">
+        {items.map((item) => {
+            const active = currentSection === item.id;
 
-        <div
-            className={`flex flex-col items-center gap-2 p-4 rounded-lg cursor-pointer transition-all ${currentSection === 'exercise' ? 'bg-blue-100' : 'hover:bg-gray-100'}`}
-            onClick={() => setCurrentSection('exercise')}
-        >
-            <div className="w-14 h-14 flex items-center justify-center text-2xl">
-                <img src={barbell} alt="Exercise" className="w-32" />
-            </div>
-            <div className="text-xs font-medium text-center">Exercise!</div>
-        </div>
+            return (
+                <div
+                    key={item.id}
+                    onClick={() => setCurrentSection(item.id as SectionType)}
+                    className="relative group flex flex-col items-center gap-2 cursor-pointer transition-all duration-300"
+                >
+                    {/* Active dot indicator on top */}
+                    {active && (
+                        <div className="absolute -top-1 w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                    )}
 
-        <div
-            className={`flex flex-col items-center gap-2 p-4 rounded-lg cursor-pointer transition-all ${currentSection === 'facts' ? 'bg-blue-100' : 'hover:bg-gray-100'}`}
-            onClick={() => setCurrentSection('facts')}
-        >
-            <div className="w-14 h-14 flex items-center justify-center text-2xl">
-                <img src={idea} alt="Fun Facts" className="w-32" />
-            </div>
-            <div className="text-xs font-medium text-center">Fun Facts</div>
-        </div>
+                    <div
+                        className={`
+                w-14 h-14 flex items-center justify-center transition-all duration-300
+                ${active ? "scale-110" : "scale-100 filter opacity-70 group-hover:opacity-90"}
+              `}
+                    >
+                        <img src={item.icon} alt={item.label} className="w-12 h-12 object-contain" />
+                    </div>
 
-        <div
-            className={`flex flex-col items-center gap-2 p-4 rounded-lg cursor-pointer transition-all ${currentSection === 'resources' ? 'bg-blue-100' : 'hover:bg-gray-100'}`}
-            onClick={() => setCurrentSection('resources')}
-        >
-            <div className="w-14 h-14 flex items-center justify-center text-2xl">
-                <img src={resource} alt="Resource" className="w-32" />
-            </div>
-            <div className="text-xs font-medium text-center">Resources</div>
-        </div>
+                    <div
+                        className={`
+                text-xs font-medium text-center transition-all duration-300
+                ${active ? "text-blue-600" : "text-gray-500 group-hover:text-gray-900"}
+              `}
+                    >
+                        {item.label}
+                    </div>
+                </div>
+            );
+        })}
     </div>
 );
 

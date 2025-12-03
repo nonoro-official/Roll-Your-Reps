@@ -4,6 +4,7 @@ import "./index.css"
 import "./data/benefitData.ts"
 import "./types/index.ts"
 import Sidebar from "./components/Sidebar.tsx";
+import NavBar from "./components/NavBar.tsx";
 import Exercise from "./pages/Exercise.tsx";
 import type {BenefitTabType, BenefitType, MascotType, SectionType} from "./types";
 import {MascotExercises} from "./data/exerciseData.ts";
@@ -41,6 +42,7 @@ const App: React.FC = () => {
     return (
         <div className="flex h-screen bg-blue-100">
             <Sidebar currentSection={currentSection} setCurrentSection={setCurrentSection} />
+            <NavBar currentSection={currentSection} setCurrentSection={setCurrentSection} />
 
             <div className="flex-1 p-8 overflow-y-auto">
                 {currentSection === 'home' && (
