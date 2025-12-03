@@ -42,12 +42,11 @@ const Home: React.FC<HomePageProps> = ({setCurrentSection}) => (
                     Get ready to exercise with your favorite animal companions!
                     Choose a buddy, get personalized workouts, and learn about the
                     amazing benefits of staying active.
-
-                    Choose your mascot, roll for your reps, and complete the exercise it gives you.
-                    Every roll helps you build a healthier lifestyle while keeping fitness simple and engaging.
-
-                    Start your fitness journey now!
                 </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">Choose your mascot, roll for your reps, and complete the exercise it gives you.
+                    Every roll helps you build a healthier lifestyle while keeping fitness simple and engaging.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">Start your fitness journey now!</p>
             </div>
 
             <button
