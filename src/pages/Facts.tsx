@@ -10,6 +10,16 @@ interface FactsPageProps {
     setCurrentBenefit: (benefit: BenefitType) => void;
 }
 
+const renderMascot = (mascot: string) => {
+    const isImage = mascot.endsWith('.png') || mascot.startsWith('/');
+
+    return isImage ? (
+        <img src={mascot} className="w-32 h-32 animate-bounce" />
+    ) : (
+        <div className="text-6xl">{mascot}</div>
+    );
+};
+
 const Facts: React.FC<FactsPageProps> = ({
                                                  currentBenefitTab,
                                                  setCurrentBenefitTab,
@@ -39,10 +49,8 @@ const Facts: React.FC<FactsPageProps> = ({
                 ))}
             </div>
 
-            <div className="text-center mt-10">
-                <div className="flex justify-center gap-16 mb-4">
-                    <div className="text-6xl">{benefitMascots[currentBenefit][0]}</div>
-                </div>
+            <div className="flex justify-center gap-16 mb-4">
+                {renderMascot(benefitMascots[currentBenefit][0])}
             </div>
 
             <div className="bg-gray-50 p-6 rounded-lg">
@@ -54,11 +62,11 @@ const Facts: React.FC<FactsPageProps> = ({
                 </p>
             </div>
 
-            <div className="text-center mt-10">
-                <div className="flex justify-center gap-16 mb-4">
-                    <div className="text-6xl">{benefitMascots[currentBenefit][1]}</div>
-                    <div className="text-6xl">{benefitMascots[currentBenefit][2]}</div>
-                </div>
+            <br/>
+
+            <div className="flex justify-center gap-16 mb-4">
+                {renderMascot(benefitMascots[currentBenefit][1])}
+                {renderMascot(benefitMascots[currentBenefit][2])}
             </div>
         </div>
     </PageContainer>
