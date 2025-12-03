@@ -2,6 +2,9 @@ import * as React from "react";
 import type {SectionType} from "../types";
 import PageContainer from "../components/PageContainer.tsx";
 import logo from "../assets/logo.png";
+import happyKitty from '../assets/happy-kitty.png';
+import staticBunny from '../assets/static-bunny.png';
+import staticBear from '../assets/static-bear.png';
 
 interface HomePageProps {
     userName: string;
@@ -51,17 +54,17 @@ const Home: React.FC<HomePageProps> = ({setCurrentSection}) => {
 
                         <div className="flex flex-wrap justify-center items-end gap-6 sm:gap-10 my-12">
                             <img
-                                src="src/assets/happy-kitty.png"
+                                src={happyKitty}
                                 alt="kitty"
                                 className="w-32 h-32 stagger-1"
                             />
                             <img
-                                src="src/assets/static-bunny.png"
+                                src={staticBunny}
                                 alt="bunny"
                                 className="w-32 h-32 stagger-2"
                             />
                             <img
-                                src="src/assets/static-bear.png"
+                                src={staticBear}
                                 alt="bear"
                                 className="w-32 h-32 stagger-3"
                             />
