@@ -1,58 +1,112 @@
-import PageContainer from "../components/PageContainer.tsx";
+
 import * as React from "react";
-import type {ResourceItem} from "../types";
+import PageContainer from "../components/PageContainer.tsx";
+import {exerciseGuides, generalResources, workoutRoutines, workoutVideos} from "../data/resourceData.ts";
 
 const Resources: React.FC = () => {
-    const resources: ResourceItem[] = [
-        {
-            icon: '🏃‍♂️',
-            title: 'Getting Started',
-            description: 'New to exercise? Start with just 10 minutes a day and gradually increase. Remember, any movement is better than none!'
-        },
-        {
-            icon: '🧘‍♀️',
-            title: 'Stretching Guide',
-            description: 'Always warm up before exercising and cool down after. Stretching helps prevent injuries and improves flexibility.'
-        },
-        {
-            icon: '💧',
-            title: 'Stay Hydrated',
-            description: 'Drink water before, during, and after your workout. Proper hydration is key to peak performance!'
-        },
-        {
-            icon: '🍎',
-            title: 'Nutrition Tips',
-            description: 'Fuel your body with healthy foods. A balanced diet supports your fitness goals and overall health.'
-        },
-        {
-            icon: '😴',
-            title: 'Rest & Recovery',
-            description: 'Your body needs time to recover. Make sure to get enough sleep and take rest days when needed.'
-        },
-        {
-            icon: '👥',
-            title: 'Find a Buddy',
-            description: 'Exercise with friends or family! Having a workout partner makes exercise more fun and keeps you motivated.'
-        }
-    ];
-
     return (
         <PageContainer>
-            <div className="p-10">
-                <h2 className="text-3xl font-semibold mb-8 text-gray-800">Helpful Resources</h2>
+            <div className="p-10 space-y-12">
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {resources.map((resource, index) => (
-                        <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                            <h3 className="text-lg font-semibold mb-3 text-gray-800">
-                                {resource.icon} {resource.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 leading-relaxed">
-                                {resource.description}
-                            </p>
-                        </div>
-                    ))}
-                </div>
+                {/* Helpful Resources */}
+                <section>
+                    <h2 className="text-3xl font-semibold mb-6 text-gray-800">Helpful Resources</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {generalResources.map((res, index) => (
+                            <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                                <h3 className="text-lg font-semibold mb-2">
+                                    {res.icon} {res.title}
+                                </h3>
+                                <p className="text-sm text-gray-600">{res.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Exercise Guides */}
+                <section>
+                    <h2 className="text-3xl font-semibold mb-6 text-gray-800">Exercise Guides</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {exerciseGuides.map((guide, index) => (
+                            <div key={index} className="bg-white p-6 rounded-lg border border-gray-200 space-y-3">
+
+                                {/* Title */}
+                                <h3 className="text-lg font-semibold mb-2">{guide.title}</h3>
+
+                                {/* For exercises with "howTo" steps */}
+                                {guide.howTo && (
+                                    <div>
+                                        <h4 className="text-sm font-semibold text-gray-700 mb-1">How to do it:</h4>
+                                        <ul className="list-disc ml-5 text-sm text-gray-600 space-y-1">
+                                            {guide.howTo.map((step, i) => <li key={i}>{step}</li>)}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {/* For warm-ups or stretches with "ideas" */}
+                                {guide.ideas && (
+                                    <div>
+                                        <h4 className="text-sm font-semibold text-gray-700 mb-1">Ideas:</h4>
+                                        <ul className="list-disc ml-5 text-sm text-gray-600 space-y-1">
+                                            {guide.ideas.map((idea, i) => <li key={i}>{idea}</li>)}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {/* Tips */}
+                                {guide.tips && (
+                                    <p className="text-sm text-gray-600">
+                                        <span className="font-semibold">Tips:</span> {guide.tips}
+                                    </p>
+                                )}
+
+                                {/* Goal */}
+                                {guide.goal && (
+                                    <p className="text-sm text-gray-600">
+                                        <span className="font-semibold">Goal:</span> {guide.goal}
+                                    </p>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Workout Routines */}
+                <section>
+                    <h2 className="text-3xl font-semibold mb-6 text-gray-800">Workout Routines</h2>
+                    <div className="space-y-6">
+                        {workoutRoutines.map((routine, index) => (
+                            <div key={index} className="bg-white p-6 rounded-lg border border-gray-200">
+                                <h3 className="text-lg font-semibold mb-3">{routine.name}</h3>
+                                <ul className="list-disc ml-5 text-sm text-gray-700 space-y-1">
+                                    {routine.items.map((item, i) => (
+                                        <li key={i}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Workout Videos */}
+                <section>
+                    <h2 className="text-3xl font-semibold mb-6 text-gray-800">Workout Videos</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        {workoutVideos.map((video, index) => (
+                            <a
+                                key={index}
+                                href={video.url}
+                                target="_blank"
+                                className="bg-white p-6 rounded-lg border border-gray-200 hover:bg-gray-100 transition"
+                            >
+                                <h3 className="text-lg font-semibold">{video.title}</h3>
+                                <p className="text-xs text-blue-600 mt-1">Watch Video →</p>
+                            </a>
+                        ))}
+                    </div>
+                </section>
+
             </div>
         </PageContainer>
     );
