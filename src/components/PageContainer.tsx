@@ -50,7 +50,7 @@ const PageContainer: React.FC<PageContainerProps> = ({
                     </>
                 )}
 
-                {/* Physical/Mental/Social Tabs for Facts page */}
+                {/* Physical/Mental/Social Tabs for Benefits page */}
                 {showTabs && currentBenefitTab && setCurrentBenefitTab && setCurrentBenefit && (
                     <>
                         <div className="hidden sm:flex flex-row gap-4 ml-4 w-auto">

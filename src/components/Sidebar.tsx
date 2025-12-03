@@ -8,7 +8,7 @@ import resource from "../assets/resource.png"
 const items = [
     { id: "home", label: "Home", icon: logo },
     { id: "exercise", label: "Exercise!", icon: barbell },
-    { id: "facts", label: "Fun Facts", icon: idea },
+    { id: "Benefits", label: "Fun Benefits", icon: idea },
     { id: "resources", label: "Resources", icon: resource },
 ]
 

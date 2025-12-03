@@ -34,6 +34,14 @@ const Exercise: React.FC<ExercisePageProps> = ({
                                                    onMascotClick,
                                                    onGenerateExercise
                                                }) => ( <PageContainer> <div className="p-6 sm:p-10">
+        {!selectedMascot && (
+            <div className="text-center text-lg sm:text-xl mt-6">
+                Pick a Mascot to exercise with!
+            </div>
+        )}
+
+        <br/>
+
     {!selectedMascot ? ( <div className="text-center"> <div className="flex flex-wrap justify-center items-end gap-6 sm:gap-10 my-16">
             {/* Cat */}
             <MascotCard
@@ -41,6 +49,7 @@ const Exercise: React.FC<ExercisePageProps> = ({
                 name="Kitty"
                 onClick={() => onMascotClick('cat')}
                 image={selectedMascot === 'cat' ? mascotImages.cat.active : mascotImages.cat.idle}
+                className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"
             />
 
             {/* Rabbit */}
@@ -49,6 +58,7 @@ const Exercise: React.FC<ExercisePageProps> = ({
                 name="Bunny"
                 onClick={() => onMascotClick('rabbit')}
                 image={selectedMascot === 'rabbit' ? mascotImages.rabbit.active : mascotImages.rabbit.idle}
+                className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"
             />
 
             {/* Bear */}
@@ -57,9 +67,9 @@ const Exercise: React.FC<ExercisePageProps> = ({
                 name="Bear"
                 onClick={() => onMascotClick('bear')}
                 image={selectedMascot === 'bear' ? mascotImages.bear.active : mascotImages.bear.idle}
+                className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"
             />
         </div>
-            <div className="text-lg sm:text-xl mt-6">Pick a Mascot to exercise with!</div>
         </div>
     ) : (
         <div className="text-center">

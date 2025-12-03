@@ -31,15 +31,15 @@ const Home: React.FC<HomePageProps> = ({setCurrentSection}) => ( <PageContainer>
     </div>
 
     <div className="bg-blue-50 rounded-lg p-6 sm:p-8 mb-8 max-w-xl sm:max-w-2xl mx-auto text-left sm:text-center">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-gray-800">Welcome!</h2>
-        <p className="text-sm sm:text-lg text-gray-700 leading-relaxed mb-4">
+        <h2 className="text-center sm:text-2xl font-semibold mb-4 text-gray-800">Welcome!</h2>
+        <p className="text-center sm:text-lg text-gray-700 leading-relaxed mb-4">
             Choose your mascot, roll for your reps, and complete the exercise it gives you.
             Every roll helps you build a healthier lifestyle while keeping fitness simple and engaging.
         </p>
-        <p className="text-sm sm:text-lg text-gray-700 leading-relaxed mb-4">
+        <p className="text-center sm:text-lg text-gray-700 leading-relaxed mb-4">
             Pick a mascot. Roll the number. Do your reps.
         </p>
-        <p className="text-sm sm:text-lg text-gray-700 leading-relaxed">Start your fitness journey now!</p>
+        <p className="text-center sm:text-lg text-gray-700 leading-relaxed">Start your fitness journey now!</p>
     </div>
 
     <button

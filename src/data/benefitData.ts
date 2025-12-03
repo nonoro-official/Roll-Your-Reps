@@ -2,48 +2,48 @@ import type {BenefitInfoItem, BenefitTabType, BenefitType} from "../types";
 
 export const benefitInfo: Record<BenefitType, BenefitInfoItem> = {
     strength: {
-        title: 'Bone Health',
-        description: 'Regular exercise helps build and maintain strong bones! Weight-bearing exercises like jumping, running, and dancing increase bone density and reduce the risk of osteoporosis as you age.'
+        title: 'Strength',
+        description: 'Regular physical activity strengthens your muscles and bones, improves flexibility and balance, and helps prevent injuries by keeping your body mobile and conditioned.'
     },
     longevity: {
-        title: 'Muscle Strength',
-        description: 'Exercise builds and tones your muscles, making everyday activities easier. Stronger muscles also support your joints and help prevent injuries!'
+        title: 'Longevity',
+        description: 'Staying active increases your life expectancy and significantly reduces the risk of early death, helping you stay healthier as you age.'
     },
     health: {
-        title: 'Weight Management',
-        description: 'Physical activity helps you maintain a healthy weight by burning calories and building muscle. Combined with good nutrition, exercise is key to a healthy body composition.'
+        title: 'General Health',
+        description: 'Exercise lowers the risk of chronic diseases, boosts your immune system, and protects you from health conditions like diabetes, hypertension, and certain cancers.'
     },
     weight: {
-        title: 'Heart Health',
-        description: 'Cardiovascular exercise strengthens your heart and improves circulation. A strong heart pumps blood more efficiently, reducing your risk of heart disease.'
+        title: 'Weight Management',
+        description: 'Physical activity helps manage your weight by burning calories, improving metabolism, and preventing unhealthy weight gain.'
     },
     heart: {
-        title: 'Energy Levels',
-        description: 'Regular exercise actually increases your energy levels! It improves your cardiovascular system and helps oxygen and nutrients reach your tissues more efficiently.'
+        title: 'Heart Health',
+        description: 'Regular movement supports heart health by improving circulation, lowering cholesterol, and reducing the risk of cardiovascular diseases.'
     },
     mood: {
         title: 'Mood Boost',
-        description: 'Exercise releases endorphins, the "feel-good" hormones! These natural mood boosters help reduce feelings of depression and anxiety, leaving you feeling happier.'
+        description: 'Exercise releases endorphins, the "feel-good" hormones. These natural mood boosters help reduce feelings of stress, depression, and anxiety, leaving you feeling happier. It helps build self-confidence through a sense of achievement.'
     },
     sleep: {
         title: 'Better Sleep',
-        description: 'Regular exercise helps you fall asleep faster and enjoy deeper sleep. Just avoid intense workouts close to bedtime!'
+        description: 'Being physically active helps you fall asleep faster and improves the quality of your sleep, supporting recovery and mental clarity.'
     },
     focus: {
-        title: 'Improved Focus',
+        title: 'Thinking & Concentration',
         description: 'Exercise increases blood flow to the brain, improving memory, concentration, and cognitive function. It can help you think more clearly and stay focused.'
     },
     communication: {
-        title: 'Self-Confidence',
-        description: 'Achieving fitness goals, big or small, builds self-esteem and confidence. Exercise helps you feel strong, capable, and proud of what your body can do!'
+        title: 'Communication Skills',
+        description: 'Sports and physical activities improve communication skills by encouraging cooperation, active listening, and social interaction.'
     },
     teamwork: {
         title: 'Teamwork Skills',
-        description: 'Group exercises and team sports teach cooperation and collaboration. You learn to work together toward common goals and support each other!'
+        description: 'Participating in group activities builds teamwork, strengthens self-esteem, and creates a sense of community and belonging.'
     },
     time: {
-        title: 'Mutual Motivation',
-        description: 'Exercising with others keeps you motivated and accountable. You inspire each other to show up, push harder, and celebrate successes together!'
+        title: 'Time Management',
+        description: 'Being active teaches time management and decision-making skills, helping you balance responsibilities and make more effective choices.'
     }
 };
 

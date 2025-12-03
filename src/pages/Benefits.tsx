@@ -3,7 +3,7 @@ import type {BenefitTabType, BenefitType} from "../types";
 import PageContainer from "../components/PageContainer.tsx";
 import {benefitInfo, benefitMascots, benefitsByTab} from "../data/benefitData.ts";
 
-interface FactsPageProps {
+interface BenefitsPageProps {
     currentBenefitTab: BenefitTabType;
     setCurrentBenefitTab: (tab: BenefitTabType) => void;
     currentBenefit: BenefitType;
@@ -16,7 +16,7 @@ const renderMascot = (mascot: string) => {
     return isImage ? (<img src={mascot}/>) : (<div>{mascot}</div>);
 };
 
-const Facts: React.FC<FactsPageProps> = ({
+const Benefits: React.FC<BenefitsPageProps> = ({
                                              currentBenefitTab,
                                              setCurrentBenefitTab,
                                              currentBenefit,
@@ -112,4 +112,4 @@ const Facts: React.FC<FactsPageProps> = ({
     );
 };
 
-export default Facts;
+export default Benefits;

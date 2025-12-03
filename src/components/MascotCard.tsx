@@ -1,15 +1,16 @@
 import * as React from "react";
 import { useState } from "react";
-import type {MascotType} from "../types";
+import type { MascotType } from "../types";
 
 interface MascotCardProps {
     type: MascotType;
     name: string;
     image?: string; // optional image
     onClick: () => void;
+    className?: string; // allow parent to pass sizing
 }
 
-const MascotCard: React.FC<MascotCardProps> = ({ name, image, onClick }) => {
+const MascotCard: React.FC<MascotCardProps> = ({ name, image, onClick, className }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -28,13 +29,15 @@ const MascotCard: React.FC<MascotCardProps> = ({ name, image, onClick }) => {
                 ⬇️
             </div>
 
-            {/* Render image if provided, else fallback to emoji */}
-            <img src={image} alt={name} className="w-32 h-32 mx-auto" />
+            <img
+                src={image}
+                alt={name}
+                className={`mx-auto ${className || "w-32 h-32"}`}
+            />
 
             <div className="text-center mt-2 text-sm font-medium">{name}</div>
         </div>
     );
 };
-
 
 export default MascotCard;

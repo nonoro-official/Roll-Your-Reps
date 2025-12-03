@@ -8,7 +8,7 @@ import resource from "../assets/resource.png"
 const navItems = [
     { key: "home", label: "Home", icon: logo },
     { key: "exercise", label: "Exercise", icon: barbell },
-    { key: "facts", label: "Facts", icon: idea },
+    { key: "Benefits", label: "Benefits", icon: idea },
     { key: "resources", label: "Resources", icon: resource },
 ];
 

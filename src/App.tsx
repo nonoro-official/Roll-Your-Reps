@@ -9,7 +9,7 @@ import Exercise from "./pages/Exercise.tsx";
 import type {BenefitTabType, BenefitType, MascotType, SectionType} from "./types";
 import {MascotExercises} from "./data/exerciseData.ts";
 import Home from "./pages/Home.tsx";
-import Facts from "./pages/Facts.tsx";
+import Benefits from "./pages/Benefits.tsx";
 import Resources from "./pages/Resources.tsx";
 
 const App: React.FC = () => {
@@ -63,8 +63,8 @@ const App: React.FC = () => {
                         onGenerateExercise={generateExercise}
                     />
                 )}
-                {currentSection === 'facts' && (
-                    <Facts
+                {currentSection === 'Benefits' && (
+                    <Benefits
                         currentBenefitTab={currentBenefitTab}
                         setCurrentBenefitTab={setCurrentBenefitTab}
                         currentBenefit={currentBenefit}
