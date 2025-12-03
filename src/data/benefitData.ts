@@ -1,4 +1,14 @@
 import type {BenefitInfoItem, BenefitTabType, BenefitType} from "../types";
+import bear from "../assets/bear.png";
+import bearGravestone from "../assets/bear-gravestone.png";
+import bunnyMask from "../assets/bunny-mask.png";
+import bearScale from "../assets/bear-scale.png";
+import bearHeart from "../assets/bear-heart.png";
+import happyKitty from "../assets/happy-kitty.png";
+import kittySleep from "../assets/kitty-sleep.png";
+import bunnyConcentrated from "../assets/bunny-concentrated.png";
+import animalsTalking from "../assets/animals-talking.png";
+import bunnyClock from "../assets/bunny-clock.png";
 
 export const benefitInfo: Record<BenefitType, BenefitInfoItem> = {
     strength: {
@@ -48,17 +58,17 @@ export const benefitInfo: Record<BenefitType, BenefitInfoItem> = {
 };
 
 export const benefitMascots: Record<BenefitType, string[]> = {
-    strength: ['/src/assets/bear.png'],
-    longevity: ['/src/assets/bear-gravestone.png'],
-    health: ['/src/assets/bunny-mask.png'],
-    weight: ['/src/assets/bear-scale.png'],
-    heart: ['/src/assets/bear-heart.png'],
-    mood: ['/src/assets/happy-kitty.png'],
-    sleep: ['/src/assets/kitty-sleep.png'],
-    focus: ['/src/assets/bunny-concentrated.png'],
-    communication: ['/src/assets/animals-talking.png'],
-    teamwork: ['/src/assets/animals-talking.png'],
-    time: ['/src/assets/bunny-clock.png']
+    strength: [bear],
+    longevity: [bearGravestone],
+    health: [bunnyMask],
+    weight: [bearScale],
+    heart: [bearHeart],
+    mood: [happyKitty],
+    sleep: [kittySleep],
+    focus: [bunnyConcentrated],
+    communication: [animalsTalking],
+    teamwork: [animalsTalking],
+    time: [bunnyClock],
 };
 
 export const benefitsByTab: Record<BenefitTabType, BenefitType[]> = {

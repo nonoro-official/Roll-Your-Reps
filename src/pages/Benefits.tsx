@@ -11,9 +11,13 @@ interface BenefitsPageProps {
 }
 
 const renderMascot = (mascot: string) => {
-    const isImage = mascot.endsWith('.png') || mascot.startsWith('/');
-
-    return isImage ? (<img src={mascot}/>) : (<div>{mascot}</div>);
+    return (
+        <img
+            src={mascot}
+            alt="mascot"
+            className="object-contain w-full h-full"
+        />
+    );
 };
 
 const Benefits: React.FC<BenefitsPageProps> = ({
