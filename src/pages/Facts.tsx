@@ -79,7 +79,6 @@ const Facts: React.FC<FactsPageProps> = ({
                             value={currentBenefit}
                             onChange={(e) => {
                                 setCurrentBenefit(e.target.value as BenefitType);
-                                setMobileDropdownOpen(false); // close after selection
                             }}
                         >
                             {benefitsByTab[currentBenefitTab].map((benefit) => (
