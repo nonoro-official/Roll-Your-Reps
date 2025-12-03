@@ -8,6 +8,8 @@ interface PageContainerProps {
     setCurrentBenefitTab?: (tab: BenefitTabType) => void;
     setCurrentBenefit?: (benefit: BenefitType) => void;
     showHomeAdvocacyTabs?: boolean;
+    activeHomeTab?: "home" | "about";
+    setActiveHomeTab?: (tab: "home" | "about") => void;
 }
 
 const PageContainer: React.FC<PageContainerProps> = ({
@@ -16,10 +18,10 @@ const PageContainer: React.FC<PageContainerProps> = ({
                                                          currentBenefitTab,
                                                          setCurrentBenefitTab,
                                                          setCurrentBenefit,
-                                                         showHomeAdvocacyTabs = false
+                                                         showHomeAdvocacyTabs = false,
+                                                         activeHomeTab,
+                                                         setActiveHomeTab
                                                      }) => {
-    const [activeHomeTab, setActiveHomeTab] = React.useState<"home" | "advocacy">("home");
-
     return (
         <div className="bg-white border border-gray-300 rounded-lg shadow-lg max-w-4xl mx-auto">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 p-3 border-b border-gray-300">
@@ -30,8 +32,8 @@ const PageContainer: React.FC<PageContainerProps> = ({
                     <div className="w-3 h-3 rounded-full border border-gray-500 bg-white"></div>
                 </div>
 
-                {/* Home/Advocacy Tabs */}
-                {showHomeAdvocacyTabs && (
+                {/* Home/About Tabs */}
+                {showHomeAdvocacyTabs && activeHomeTab && setActiveHomeTab && (
                     <>
                         <div className="hidden sm:flex flex-row gap-4 ml-4 w-auto">
                             <button
@@ -41,10 +43,10 @@ const PageContainer: React.FC<PageContainerProps> = ({
                                 Home
                             </button>
                             <button
-                                className={`px-4 py-1 text-sm sm:text-base font-medium transition-colors ${activeHomeTab === 'advocacy' ? 'text-indigo-500' : 'text-gray-600 hover:text-gray-800'}`}
-                                onClick={() => setActiveHomeTab('advocacy')}
+                                className={`px-4 py-1 text-sm sm:text-base font-medium transition-colors ${activeHomeTab === 'about' ? 'text-indigo-500' : 'text-gray-600 hover:text-gray-800'}`}
+                                onClick={() => setActiveHomeTab('about')}
                             >
-                                Advocacy
+                                About
                             </button>
                         </div>
                     </>

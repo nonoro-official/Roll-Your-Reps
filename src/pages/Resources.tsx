@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import PageContainer from "../components/PageContainer.tsx";
 import {exerciseGuides, generalResources, workoutRoutines, workoutVideos} from "../data/resourceData.ts";
@@ -31,8 +30,11 @@ const Resources: React.FC = () => {
                         {exerciseGuides.map((guide, index) => (
                             <div key={index} className="bg-white p-6 rounded-lg border border-gray-200 space-y-3">
 
-                                {/* Title */}
-                                <h3 className="text-lg font-semibold mb-2">{guide.title}</h3>
+                                {/* Title with icon */}
+                                <h3 className="text-lg font-semibold mb-2">
+                                    {guide.icon && <span className="mr-2">{guide.icon}</span>}
+                                    {guide.title}
+                                </h3>
 
                                 {/* For exercises with "howTo" steps */}
                                 {guide.howTo && (
@@ -78,7 +80,10 @@ const Resources: React.FC = () => {
                     <div className="space-y-6">
                         {workoutRoutines.map((routine, index) => (
                             <div key={index} className="bg-white p-6 rounded-lg border border-gray-200">
-                                <h3 className="text-lg font-semibold mb-3">{routine.name}</h3>
+                                <h3 className="text-lg font-semibold mb-3">
+                                    {routine.icon && <span className="mr-2">{routine.icon}</span>}
+                                    {routine.name}
+                                </h3>
                                 <ul className="list-disc ml-5 text-sm text-gray-700 space-y-1">
                                     {routine.items.map((item, i) => (
                                         <li key={i}>{item}</li>

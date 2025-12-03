@@ -36,6 +36,7 @@ export const generalResources: ResourceItem[] = [
 // --- EXERCISE GUIDES ---
 export const exerciseGuides = [
     {
+        icon: "🔥",
         title: "Warm-Ups (1 minute)",
         ideas: [
             "Arm circles",
@@ -46,6 +47,7 @@ export const exerciseGuides = [
         goal: "Raise your heart rate and loosen your joints."
     },
     {
+        icon: "🦵",
         title: "Squats",
         howTo: [
             "Stand with feet shoulder-width apart.",
@@ -56,6 +58,7 @@ export const exerciseGuides = [
         tips: "Keep your chest up and knees pointed forward."
     },
     {
+        icon: "🤸‍♂️",
         title: "Knee Push-Ups",
         howTo: [
             "Start in a plank position but with knees on the floor.",
@@ -65,6 +68,7 @@ export const exerciseGuides = [
         tips: "Keep your hips aligned — don’t sag your back."
     },
     {
+        icon: "🪵",
         title: "Plank (20–30 sec)",
         howTo: [
             "Place forearms on the ground, elbows under shoulders.",
@@ -74,6 +78,7 @@ export const exerciseGuides = [
         tips: "Squeeze your core and glutes."
     },
     {
+        icon: "🦵",
         title: "Lunges (each leg)",
         howTo: [
             "Step forward with one leg.",
@@ -84,6 +89,7 @@ export const exerciseGuides = [
         tips: "Keep your upper body straight; front knee shouldn’t go past toes."
     },
     {
+        icon: "🤸",
         title: "Jumping Jacks",
         howTo: [
             "Stand straight with feet together and hands by your sides.",
@@ -93,6 +99,7 @@ export const exerciseGuides = [
         tips: "Land softly, keep your core tight, and breathe steadily."
     },
     {
+        icon: "💪",
         title: "Push-Ups (regular)",
         howTo: [
             "Start in a plank with hands under shoulders.",
@@ -102,6 +109,7 @@ export const exerciseGuides = [
         tips: "Keep your body straight; don’t let your hips sag."
     },
     {
+        icon: "⛰️",
         title: "Mountain Climbers (20 reps)",
         howTo: [
             "Start in a plank position.",
@@ -111,6 +119,7 @@ export const exerciseGuides = [
         tips: "Move fast but stay controlled."
     },
     {
+        icon: "🧘",
         title: "Stretch (Cool Down)",
         ideas: [
             "Hamstring stretch",
@@ -121,6 +130,7 @@ export const exerciseGuides = [
         goal: "Reduce soreness and improve mobility."
     },
     {
+        icon: "🟢",
         title: "Crunches (15 reps)",
         howTo: [
             "Lie on your back, knees bent, hands behind your head.",
@@ -130,6 +140,7 @@ export const exerciseGuides = [
         tips: "Don't pull on your neck — lead with your chest."
     },
     {
+        icon: "🚴",
         title: "Bicycle Kicks (20 reps)",
         howTo: [
             "Lie on your back with your hands behind your head.",
@@ -138,6 +149,7 @@ export const exerciseGuides = [
         tips: "Keep your core engaged — don’t rush."
     },
     {
+        icon: "🦵",
         title: "Leg Raises (20 reps)",
         howTo: [
             "Lie flat on your back, hands under your hips.",
@@ -147,6 +159,7 @@ export const exerciseGuides = [
         tips: "Keep your lower back pressed into the floor."
     },
     {
+        icon: "✋",
         title: "Arm Circles (20 reps)",
         howTo: [
             "Stand tall, arms stretched out to the sides.",
@@ -155,6 +168,7 @@ export const exerciseGuides = [
         tips: "Keep arms straight and shoulder-level."
     },
     {
+        icon: "🪑",
         title: "Tricep Dips (Chair) — 20 reps",
         howTo: [
             "Sit on the edge of a stable chair and place hands beside your hips.",
@@ -165,6 +179,7 @@ export const exerciseGuides = [
         tips: "Keep your back close to the chair."
     },
     {
+        icon: "⬆️⬇️",
         title: "Plank Up-Downs (10 reps)",
         howTo: [
             "Start in a high plank (hands on the floor).",
@@ -178,6 +193,7 @@ export const exerciseGuides = [
 // --- WORKOUT ROUTINES ---
 export const workoutRoutines = [
     {
+        icon: "🌟",
         name: "Beginner Routine (5 minutes)",
         items: [
             "20 Jumping Jacks",
@@ -188,6 +204,7 @@ export const workoutRoutines = [
         ]
     },
     {
+        icon: "💥",
         name: "Full Body Routine (10 minutes)",
         items: [
             "1 minute warm-up",
@@ -201,6 +218,7 @@ export const workoutRoutines = [
         ]
     },
     {
+        icon: "🧘‍♂️",
         name: "Core Routine",
         items: [
             "15 Crunches",
@@ -210,6 +228,7 @@ export const workoutRoutines = [
         ]
     },
     {
+        icon: "💪",
         name: "Arms Routine (No Equipment)",
         items: [
             "20 Arm Circles",
