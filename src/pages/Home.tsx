@@ -9,7 +9,7 @@ interface HomePageProps {
     setCurrentSection: (section: SectionType) => void;
 }
 
-const Home: React.FC<HomePageProps> = ({userName, setUserName, setCurrentSection}) => (
+const Home: React.FC<HomePageProps> = ({setCurrentSection}) => (
     <PageContainer>
         <div className="p-16 text-center">
             <h1 className="text-6xl font-bold mb-6 text-gray-800 flex items-center justify-center gap-4">
@@ -17,13 +17,23 @@ const Home: React.FC<HomePageProps> = ({userName, setUserName, setCurrentSection
                 Roll Your Reps!
             </h1>
             <p className="text-2xl text-gray-600 mb-8">
-                Your fun companion for staying active and healthy!
+                Your fun, interactive way to stay active, stay strong, and level up your fitness — one roll at a
+                time!
             </p>
 
             <div className="flex justify-center gap-8 my-12">
-                <div className="text-7xl animate-bounce">🐱</div>
-                <div className="text-7xl animate-bounce delay-100">🐰</div>
-                <div className="text-7xl animate-bounce delay-200">🐻</div>
+                <img
+                    src="src/assets/happy-kitty.png"
+                    alt="kitty"
+                    className="w-32 h-32 animate-bounce"/>
+                <img
+                    src="src/assets/static-bunny.png"
+                    alt="bunny"
+                    className="w-32 h-32 animate-bounce"/>
+                <img
+                    src="src/assets/static-bear.png"
+                    alt="bear"
+                    className="w-32 h-32 animate-bounce"/>
             </div>
 
             <div className="bg-blue-50 rounded-lg p-8 mb-8 max-w-2xl mx-auto">
@@ -32,17 +42,12 @@ const Home: React.FC<HomePageProps> = ({userName, setUserName, setCurrentSection
                     Get ready to exercise with your favorite animal companions!
                     Choose a buddy, get personalized workouts, and learn about the
                     amazing benefits of staying active.
-                </p>
 
-                <div className="flex gap-4 justify-center items-center mb-4">
-                    <input
-                        type="text"
-                        placeholder="Enter your name (optional)"
-                        value={userName}
-                        onChange={(e) => setUserName(e.target.value)}
-                        className="border-2 border-gray-300 rounded-lg px-4 py-2 text-lg focus:border-blue-500 focus:outline-none"
-                    />
-                </div>
+                    Choose your mascot, roll for your reps, and complete the exercise it gives you.
+                    Every roll helps you build a healthier lifestyle while keeping fitness simple and engaging.
+
+                    Start your fitness journey now!
+                </p>
             </div>
 
             <button

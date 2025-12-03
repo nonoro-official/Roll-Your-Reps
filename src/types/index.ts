@@ -4,9 +4,9 @@ export type MascotType = 'cat' | 'rabbit' | 'bear';
 export type SectionType = 'home' | 'exercise' | 'facts' | 'resources';
 export type BenefitTabType = 'physical' | 'mental' | 'social';
 export type BenefitType =
-    | 'bone' | 'muscle' | 'weight' | 'heart' | 'energy'
-    | 'mood' | 'stress' | 'sleep' | 'focus' | 'confidence'
-    | 'teamwork' | 'communication' | 'friendship' | 'motivation';
+    | 'strength' | 'longevity' | 'health' | 'weight' | 'heart'
+    | 'mood' | 'sleep' | 'focus'
+    | 'communication' | 'teamwork' | 'time';
 
 export interface ExerciseList {
     withEquipment: string[];

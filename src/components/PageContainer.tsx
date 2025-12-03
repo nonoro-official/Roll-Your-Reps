@@ -28,7 +28,7 @@ const PageContainer: React.FC<PageContainerProps> = ({
                         className={`px-8 py-1 text-base font-medium transition-colors ${currentBenefitTab === 'physical' ? 'text-indigo-500' : 'text-gray-600 hover:text-gray-800'}`}
                         onClick={() => {
                             setCurrentBenefitTab('physical');
-                            setCurrentBenefit('bone');
+                            setCurrentBenefit('strength');
                         }}
                     >
                         Physical

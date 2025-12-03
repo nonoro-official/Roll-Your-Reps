@@ -15,7 +15,7 @@ const App: React.FC = () => {
     const [selectedMascot, setSelectedMascot] = useState<MascotType | null>(null);
     const [currentSection, setCurrentSection] = useState<SectionType>('home');
     const [currentBenefitTab, setCurrentBenefitTab] = useState<BenefitTabType>('physical');
-    const [currentBenefit, setCurrentBenefit] = useState<BenefitType>('bone');
+    const [currentBenefit, setCurrentBenefit] = useState<BenefitType>('strength');
     const [exerciseText, setExerciseText] = useState<string>('Click on me to get an exercise!');
     const [hasEquipment, setHasEquipment] = useState<boolean>(true);
     const [userName, setUserName] = useState<string>('');
