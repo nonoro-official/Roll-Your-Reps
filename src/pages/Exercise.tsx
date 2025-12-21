@@ -98,27 +98,40 @@ const Exercise: React.FC<ExercisePageProps> = ({
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                {/* Go Back */}
                 <button
                     className="bg-white border-2 border-gray-800 rounded-lg px-6 py-3 text-sm sm:text-base font-medium cursor-pointer transition-all hover:bg-gray-100"
-                    onClick={() => setSelectedMascot(null)}
-                >
+                    onClick={() => setSelectedMascot(null)}>
                     ← Go Back
                 </button>
 
-                <button
-                    className={`border-2 rounded-lg px-6 py-3 text-sm sm:text-base font-medium cursor-pointer transition-all ${
-                        hasEquipment
-                            ? 'bg-indigo-500 text-white border-indigo-500 hover:bg-indigo-600'
-                            : 'bg-orange-500 text-white border-orange-500 hover:bg-orange-600'
-                    }`}
-                    onClick={() => {
-                        setHasEquipment(!hasEquipment);
-                        onGenerateExercise(selectedMascot!);
-                    }}
-                >
+                {/* Equipment Toggle */}
+                <div className="flex items-center gap-3">
+                <span className="text-sm sm:text-base font-medium">
                     {hasEquipment ? '🏋️ Has Equipment' : '🙌 No Equipment'}
-                </button>
+                </span>
+
+                    <button
+                        type="button"
+                        role="switch"
+                        aria-checked={hasEquipment}
+                        onClick={() => {
+                            const next = !hasEquipment;
+                            setHasEquipment(next);
+                            onGenerateExercise(selectedMascot!);
+                        }}
+                        className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors ${
+                            hasEquipment ? 'bg-indigo-500' : 'bg-orange-500'
+                        }`}
+                    >
+                        <span
+                            className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${
+                                hasEquipment ? 'translate-x-8' : 'translate-x-1'
+                            }`}
+                        />
+                    </button>
+                </div>
             </div>
         </div>
     )}
