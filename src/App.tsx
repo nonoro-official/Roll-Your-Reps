@@ -1,8 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
 import "./index.css"
-import "./data/benefitData.ts"
-import "./types/index.ts"
 import Sidebar from "./components/Sidebar.tsx";
 import NavBar from "./components/NavBar.tsx";
 import Exercise from "./pages/Exercise.tsx";
@@ -34,7 +32,10 @@ const App: React.FC = () => {
             : MascotExercises[MascotType].noEquipment;
 
         const randomExercise = exerciseList[Math.floor(Math.random() * exerciseList.length)];
-        const randomCount = Math.floor(Math.random() * 20) + 5;
+
+        const MIN_REPS = 5;
+        const MAX_REPS = 25;
+        const randomCount = Math.floor(Math.random() * (MAX_REPS - MIN_REPS)) + MIN_REPS;
 
         setExerciseText(`${randomExercise} ${randomCount} times with me!`);
     };
@@ -63,7 +64,7 @@ const App: React.FC = () => {
                         onGenerateExercise={generateExercise}
                     />
                 )}
-                {currentSection === 'Benefits' && (
+                {currentSection === 'benefits' && (
                     <Benefits
                         currentBenefitTab={currentBenefitTab}
                         setCurrentBenefitTab={setCurrentBenefitTab}
