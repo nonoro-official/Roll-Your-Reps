@@ -1,9 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
-import type { MascotType } from "../types";
 
 interface MascotCardProps {
-    type: MascotType;
     name: string;
     image?: string; // optional image
     onClick: () => void;

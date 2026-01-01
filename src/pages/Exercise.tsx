@@ -49,7 +49,6 @@ const Exercise: React.FC<ExercisePageProps> = ({
                         <div className="flex flex-wrap justify-center items-end gap-6 sm:gap-10 my-16">
                             {/* Cat */}
                             <MascotCard
-                                type="cat"
                                 name="Kitty"
                                 onClick={() => onMascotClick('cat')}
                                 image={selectedMascot === 'cat' ? mascotImages.cat.active : mascotImages.cat.idle}
@@ -58,7 +57,6 @@ const Exercise: React.FC<ExercisePageProps> = ({
 
                             {/* Rabbit */}
                             <MascotCard
-                                type="rabbit"
                                 name="Bunny"
                                 onClick={() => onMascotClick('rabbit')}
                                 image={selectedMascot === 'rabbit' ? mascotImages.rabbit.active : mascotImages.rabbit.idle}
@@ -67,7 +65,6 @@ const Exercise: React.FC<ExercisePageProps> = ({
 
                             {/* Bear */}
                             <MascotCard
-                                type="bear"
                                 name="Bear"
                                 onClick={() => onMascotClick('bear')}
                                 image={selectedMascot === 'bear' ? mascotImages.bear.active : mascotImages.bear.idle}

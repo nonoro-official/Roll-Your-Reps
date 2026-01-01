@@ -3,6 +3,8 @@ import type {BenefitTabType, BenefitType} from "../types";
 import PageContainer from "../components/PageContainer.tsx";
 import {benefitInfo, benefitMascots, benefitsByTab} from "../data/benefitData.ts";
 
+const BENEFIT_TABS: BenefitTabType[] = ['physical', 'mental', 'social'];
+
 interface BenefitsPageProps {
     currentBenefitTab: BenefitTabType;
     setCurrentBenefitTab: (tab: BenefitTabType) => void;
@@ -26,7 +28,6 @@ const Benefits: React.FC<BenefitsPageProps> = ({
                                              currentBenefit,
                                              setCurrentBenefit,
                                          }) => {
-    const [mobileDropdownOpen, setMobileDropdownOpen] = React.useState(true);
 
     return (
         <PageContainer
@@ -55,7 +56,7 @@ const Benefits: React.FC<BenefitsPageProps> = ({
 
                 {/* Mobile Tab Navbar */}
                 <div className="sm:hidden flex flex-row justify-around mb-2 bg-indigo-50 rounded-lg p-1">
-                    {(['physical', 'mental', 'social'] as BenefitTabType[]).map((tabName) => (
+                    {BENEFIT_TABS.map((tabName)  => (
                         <button
                             key={tabName}
                             className={`flex-1 py-2 text-center text-sm font-medium rounded-lg transition-colors ${
@@ -67,7 +68,6 @@ const Benefits: React.FC<BenefitsPageProps> = ({
                                 if (tabName === 'physical') setCurrentBenefit('strength');
                                 if (tabName === 'mental') setCurrentBenefit('mood');
                                 if (tabName === 'social') setCurrentBenefit('communication');
-                                setMobileDropdownOpen(true); // always open dropdown
                             }}
                         >
                             {tabName.charAt(0).toUpperCase() + tabName.slice(1)}
@@ -76,8 +76,7 @@ const Benefits: React.FC<BenefitsPageProps> = ({
                 </div>
 
                 {/* Mobile Benefit Dropdown */}
-                {mobileDropdownOpen && (
-                    <div className="sm:hidden mb-6">
+                <div className="sm:hidden mb-6">
                         <select
                             className="w-full p-2 border border-gray-300 rounded-lg"
                             value={currentBenefit}
@@ -91,8 +90,7 @@ const Benefits: React.FC<BenefitsPageProps> = ({
                                 </option>
                             ))}
                         </select>
-                    </div>
-                )}
+                </div>
 
                 {/* Benefit Content */}
                 <div className="bg-gray-50 w-full p-2 sm:p-6 rounded-lg">
