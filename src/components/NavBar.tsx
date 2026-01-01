@@ -6,10 +6,10 @@ import idea from "../assets/idea.png"
 import resource from "../assets/resource.png"
 
 const navItems = [
-    { key: "home", label: "Home", icon: logo },
-    { key: "exercise", label: "Exercise", icon: barbell },
-    { key: "benefits", label: "Benefits", icon: idea },
-    { key: "resources", label: "Resources", icon: resource },
+    {key: "home", label: "Home", icon: logo},
+    {key: "exercise", label: "Exercise", icon: barbell},
+    {key: "benefits", label: "Benefits", icon: idea},
+    {key: "resources", label: "Resources", icon: resource},
 ];
 
 interface NavBarProps {
@@ -17,7 +17,7 @@ interface NavBarProps {
     setCurrentSection: (section: SectionType) => void;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ currentSection, setCurrentSection }) => (
+const NavBar: React.FC<NavBarProps> = ({currentSection, setCurrentSection}) => (
     <div className="md:hidden fixed bottom-5 left-1/2 -translate-x-1/2
                     bg-white/70 backdrop-blur-xl border border-white/40
                     shadow-xl rounded-2xl px-5 py-3 flex justify-between gap-6 w-[90%] max-w-[450px] z-50">
