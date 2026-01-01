@@ -103,6 +103,7 @@ const Resources: React.FC = () => {
                                 key={index}
                                 href={video.url}
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="bg-white p-6 rounded-lg border border-gray-200 hover:bg-gray-100 transition"
                             >
                                 <h3 className="text-lg font-semibold">{video.title}</h3>

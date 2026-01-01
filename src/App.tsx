@@ -24,12 +24,12 @@ const App: React.FC = () => {
         generateExercise(type);
     };
 
-    const generateExercise = (MascotType: MascotType): void => {
-        if (!MascotType) return;
+    const generateExercise = (mascotType: MascotType): void => {
+        if (!mascotType) return;
 
         const exerciseList = hasEquipment
-            ? MascotExercises[MascotType].withEquipment
-            : MascotExercises[MascotType].noEquipment;
+            ? MascotExercises[mascotType].withEquipment
+            : MascotExercises[mascotType].noEquipment;
 
         const randomExercise = exerciseList[Math.floor(Math.random() * exerciseList.length)];
 
