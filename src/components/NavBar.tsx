@@ -8,7 +8,7 @@ import resource from "../assets/resource.png"
 const navItems = [
     { key: "home", label: "Home", icon: logo },
     { key: "exercise", label: "Exercise", icon: barbell },
-    { key: "Benefits", label: "Benefits", icon: idea },
+    { key: "benefits", label: "Benefits", icon: idea },
     { key: "resources", label: "Resources", icon: resource },
 ];
 
@@ -30,6 +30,7 @@ const NavBar: React.FC<NavBarProps> = ({ currentSection, setCurrentSection }) =>
             >
                 <img
                     src={item.icon}
+                    alt={item.label}
                     className={`w-7 h-7 transition-all ${
                         currentSection === item.key ? "scale-110" : "opacity-70 group-hover:opacity-90"
                     }`}
