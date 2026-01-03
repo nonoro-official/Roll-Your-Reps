@@ -1,5 +1,6 @@
 import * as React from "react";
 import {lazy, Suspense, useState} from "react";
+import { Oval } from "react-loader-spinner";
 import "./index.css"
 import Sidebar from "./components/Sidebar.tsx";
 import NavBar from "./components/NavBar.tsx";
@@ -11,6 +12,9 @@ const Exercise = lazy(() => import("./pages/Exercise"));
 const Benefits = lazy(() => import("./pages/Benefits"));
 const Resources = lazy(() => import("./pages/Resources"));
 
+const MIN_REPS = 5;
+const MAX_REPS = 25;
+
 const App: React.FC = () => {
     const [selectedMascot, setSelectedMascot] = useState<MascotType | null>(null);
     const [currentSection, setCurrentSection] = useState<SectionType>('home');
@@ -19,6 +23,7 @@ const App: React.FC = () => {
     const [exerciseText, setExerciseText] = useState<string>('Click on me to get an exercise!');
     const [hasEquipment, setHasEquipment] = useState<boolean>(true);
     const [userName, setUserName] = useState<string>('');
+    const [loading] = useState(true);
 
     const handleMascotClick = (type: MascotType): void => {
         setSelectedMascot(type);
@@ -33,9 +38,6 @@ const App: React.FC = () => {
             : MascotExercises[mascotType].noEquipment;
 
         const randomExercise = exerciseList[Math.floor(Math.random() * exerciseList.length)];
-
-        const MIN_REPS = 5;
-        const MAX_REPS = 25;
         const randomCount = Math.floor(Math.random() * (MAX_REPS - MIN_REPS)) + MIN_REPS;
 
         setExerciseText(`${randomExercise} ${randomCount} times with me!`);
@@ -47,7 +49,16 @@ const App: React.FC = () => {
             <NavBar currentSection={currentSection} setCurrentSection={setCurrentSection}/>
 
             <div className="flex-1 p-8 overflow-y-auto">
-                <Suspense fallback={<div className="text-center p-8"> Loading...</div>}>
+                <Suspense fallback={<div className="flex items-center justify-center h-screen"><Oval
+                    height="80"
+                    width="80"
+                    color="#6366f1"
+                    ariaLabel="oval-loading"
+                    visible={loading}
+                    secondaryColor="#6366f1"
+                    strokeWidth={2}
+                    strokeWidthSecondary={2}
+                /></div>}>
                     {currentSection === 'home' && (
                         <Home
                             userName={userName}
